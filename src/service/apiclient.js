@@ -1,5 +1,5 @@
 const url = 'api/questions';
-// tuleeko kaikki url:it ja jos tulee, onko sijainnilla väliä?
+// tuleeko kaikki url:it ja jos tulee, onko sijainnilla väliä? Voi olla samassa
 // const url = 'api/comments';
 // const url = '/';
 
