@@ -5,13 +5,11 @@ import Col from 'react-bootstrap/Col'
 
 export default class QuestionForm extends Component {
     state = {
-        id: '',
         title: '',
         details: '',
         optionA: '',
         optionB: '',
-        username: '',
-
+        username: ''
     }
 
     onChange = e => {
@@ -20,42 +18,11 @@ export default class QuestionForm extends Component {
 
     submitQForm = e => {
         e.preventDefault()
-        fetch('http://localhost:3000/', { //tähän jotain järkevää
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                title: this.state.title,
-                details: this.state.details,
-                optionA: this.state.optionA,
-                optionB: this.state.optionB,
-                username: this.state.username
-            })
-        })
-            .then(response => response.json())
-            .then(item => {
-                if (Array.isArray(item)) {
-                    this.props.addItemToState(item[0])
-                    this.props.toggle()
-                } else {
-                    console.log('failure')
-                }
-            })
-            .catch(err => console.log(err))
-    }
-
-    componentDidMount() {
-        // jos item löytyy, laita data stateen
-        if (this.props.item) {
-            const { id, title, details, optionA, optionB, username } = this.props.item
-            this.setState({ id, title, details, optionA, optionB, username })
-        }
-    }
-
-    handleClick = () => {
+        this.props.addCallback(this.state);
+        this.setState({ title: '', details: '', optionA: '', optionB: '', username: '' });
         console.log('Click happened');
     }
+
     render() {
         return (
             <div className="QuestionForm AppComponent">
