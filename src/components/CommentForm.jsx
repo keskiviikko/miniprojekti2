@@ -2,17 +2,9 @@ import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
-import Poll from 'react-polls'
-
-// Declaring poll question and answers
-const pollQuestion = 'Kumpi menee päälle, kinkku vai juusto?'
-const pollAnswers = [
-    { option: 'Kinkku', votes: 8 },
-    { option: 'Juusto', votes: 2 }
-]
 
 export default class CommentForm extends Component {
-    // Setting answers to state to reload the component with each vote
+// Setting answers to state to reload the component with each vote
     state = {
         pollAnswers: [...pollAnswers]
     }
@@ -34,10 +26,8 @@ export default class CommentForm extends Component {
     //     this.props.history.push('/questions');
     // })
     render() {
-        const { pollAnswers } = this.state
         return (
             <div className="CommentForm AppComponent">
-                <Poll question={pollQuestion} answers={pollAnswers} onVote={this.handleVote} />
                 <Form>
                     {/* {['radio'].map(type => (
                         <div key={`inline-${type}`} className="mb-3">
