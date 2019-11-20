@@ -29,6 +29,10 @@ export default class CommentForm extends Component {
             pollAnswers: newPollAnswers
         })
     }
+    // ALLA OLEVA KUULUU FORM:IIN, mutta kesken
+    // postQuestion(this.state).then(response => {
+    //     this.props.history.push('/questions');
+    // })
     render() {
         const { pollAnswers } = this.state
         return (
