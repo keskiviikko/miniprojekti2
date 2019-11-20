@@ -4,6 +4,27 @@ import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 
 export default class CommentForm extends Component {
+// Setting answers to state to reload the component with each vote
+    state = {
+        pollAnswers: [...pollAnswers]
+    }
+
+    // Handling user vote
+    // Increments the votes count of answer when the user votes
+    handleVote = voteAnswer => {
+        const { pollAnswers } = this.state
+        const newPollAnswers = pollAnswers.map(answer => {
+            if (answer.option === voteAnswer) answer.votes++
+            return answer
+        })
+        this.setState({
+            pollAnswers: newPollAnswers
+        })
+    }
+    // ALLA OLEVA KUULUU FORM:IIN, mutta kesken
+    // postQuestion(this.state).then(response => {
+    //     this.props.history.push('/questions');
+    // })
     render() {
         return (
             <div className="CommentForm AppComponent">
