@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.QuestionForm form {
+  border: 1pt solid #62929E;
+  border-radius: 10pt;
+  padding: 1em;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.CommentForm form {
+  border: 1pt solid #62929E;
+  border-radius: 10pt;
+  padding: 1em;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+}
