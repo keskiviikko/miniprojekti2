@@ -1,41 +1,20 @@
 import React, { Component } from 'react'
+import QuestionDetails from './QuestionDetails'
 
 
 export default class QuestionList extends Component {
-    state = {
-        items: []
-    }
-
-    getItems() {
-        fetch('http://localhost:3000/') // tähän jotain järkevää
-            .then(response => response.json())
-            .then(items => this.setState({ items }))
-            .catch(err => console.log(err))
-    }
-
-    addItemToState = (item) => {
-        this.setState(prevState => ({
-            items: [...prevState.items, item]
-        }))
-    }
-
-    componentDidMount() {
-        this.getItems()
-    }
-
+    state = { items: [] };
     render() {
-        const items = this.items.map(item => {
-            return (
-                <ul key={item.id}>
-                    <li>{item.title}</li>
-                </ul>
-            )
-        })
+        const qitems = this.state.items
+            .map(item => {
+                return (
+                    <QuestionDetails question={item} key={item.id} />
+                )
+            })
         return (
             <div>
-                <ul>
-                    <li>{{ items }}</li>
-                </ul>
+                <h2>QuestionList</h2>
+                {qitems}
             </div>
         )
     }

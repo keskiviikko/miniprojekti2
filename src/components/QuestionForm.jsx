@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Poll from 'react-polls'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
@@ -60,7 +59,7 @@ export default class QuestionForm extends Component {
     render() {
         return (
             <div className="QuestionForm AppComponent">
-                <Form onSubmit={this.submitQForm}>
+                <Form>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridTitle">
                             <Form.Label>Question Title</Form.Label>
@@ -92,7 +91,7 @@ export default class QuestionForm extends Component {
                         <Form.Control name='username' onChange={this.onChange} value={this.state.username} type="text" placeholder="Enter username" />
                     </Form.Group>
 
-                    <Button variant="info" type="submit" onClick={this.handleClick}>Post</Button>
+                    <Button variant="info" type="submit" onClick={this.submitQForm}>Post</Button>
 
                 </Form>
             </div>
