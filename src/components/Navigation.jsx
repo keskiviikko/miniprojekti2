@@ -1,51 +1,35 @@
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import NavbarBrand from 'react-bootstrap/NavbarBrand'
 
 export default class Navigation extends Component {
     render() {
         return (
-            <SideNav
-                onSelect={(selected) => {
-                    // Add your code here
-                }}
-            >
-                <SideNav.Toggle />
-                <SideNav.Nav defaultSelected="home">
-                    <NavItem eventKey="home">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-                        </NavIcon>
-                        <NavText href="/">Home</NavText>
-                    </NavItem>
-                    <NavItem eventKey="list">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
-                        </NavIcon>
-                        <NavText eventKey="link-2" href="/questionlist">Question List</NavText>
-                        </NavItem>
-                        <NavItem eventKey="form">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
-                        </NavIcon>
-                        <NavText eventKey="link-1" href="/questionform">Question Form</NavText>
-                    </NavItem>
-                </SideNav.Nav>
-            </SideNav>
-        )
+            <Navbar fixed='top' expand="sm" collapseOnSelect bg='light' variant='light'>
+                <NavbarBrand>Kinkku vs. juusto</NavbarBrand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Item>
+                            <Nav.Link eventKey={1} as={Link} to='/'>
+                            Home
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey={2} as={Link} to='/questiondetails'>
+                            Question Details
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey={3} as={Link} to='/questionform'>
+                            Question Form
+                            </Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar >
+    )
     }
 }
-
-
-        // <h2 className='header'>JUUSTO VAI KINKKU?</h2>
-        // <Nav className="justify-content-center" activeKey="/">
-        //   <Nav.Item>
-        //     <Nav.Link href="/">Home</Nav.Link>
-        //   </Nav.Item>
-        //   <Nav.Item>
-        //     <Nav.Link eventKey="link-2" href="/questionlist">Question List</Nav.Link>
-        //   </Nav.Item>
-        //   <Nav.Item>
-        //     <Nav.Link eventKey="link-1" href="/questionform">Question Form</Nav.Link>
-        //   </Nav.Item>
-
-        // </Nav>

@@ -1,15 +1,23 @@
-import React, { Component } from 'react'
-import CommentForm from './CommentForm'
+import React, { Component } from "react";
 
-export default class QuestionList extends Component {
+class Item extends Component {
+    state = {
+        listitems: ["Kinkku vai juusto", "Musta vai valkoinen", "Auto vai polkupyörä", "Javascript vai Java", "Superman or Batman"]
+    };
+
     render() {
         return (
-            <div>
-            <ul>
-                <li>JUUSTO VAI KINKKU?</li>
-                
-            </ul>
-            </div>
-        )
+            <React.Fragment>
+                <ul className="list-group-flush">
+                    {this.state.listitems.map(listitem => (
+                        <li className="list-group-item list-group-item">
+                            {listitem}
+                        </li>
+                    ))}
+                </ul>
+            </React.Fragment>
+        );
     }
 }
+
+export default Item;
