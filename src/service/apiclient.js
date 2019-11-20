@@ -3,11 +3,6 @@ const url = 'api/questions';
 // const url = 'api/comments';
 // const url = '/';
 
-// ALLA OLEVA KUULUU FORM:IIN:
-// postQuestion(this.state).then(response => {
-//     this.PaymentResponse.history.push('/questions');
-// })
-
 export const fetchAllQuestions = () => {
     return fetch(url)
         .then(resp => resp.json());
