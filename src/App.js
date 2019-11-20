@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import Nav from 'react-bootstrap/Nav'
 import './App.css';
 import Home from './components/Home'
