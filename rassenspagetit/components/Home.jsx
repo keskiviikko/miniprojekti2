@@ -1,12 +1,17 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Item from './QuestionList2';
 export default class Home extends Component {
     render() {
         return (
-            <div className="Home AppComponent">
-                <h2>Home</h2>
-                <p>Home Page under construction...</p>
-            </div>
+                <Container>
+                    <Row>
+                        <Col sm={8}>Under construction</Col>
+                        <Col sm={4}><Item/></Col>
+                    </Row>
+                </Container>
         )
     }
 }

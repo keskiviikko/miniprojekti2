@@ -4,17 +4,17 @@ const url2 = 'http://localhost:3000/api/comments';
 // const url = 'api/comments';
 // const url = '/';
 
-export const fetchAllQuestions = () => {
+export const getAllQuestions = () => {
     return fetch(url)
         .then(resp => resp.json());
 }
 
-export const fetchSingleQuestion = (id) => {
+export const getSingleQuestion = (id) => {
     return fetch(`${url}/${id}`)
         .then(response => response.json());
 }
 
-export const postQuestion = (question) => {
+export const createQuestion = (question) => {
     return fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -22,18 +22,18 @@ export const postQuestion = (question) => {
     })
 }
 
-export const deleteSingleQuestion = (id) => {
+export const deleteQuestion = (id) => {
     return fetch(`${url}/${id}`, {
         method: 'DELETE'
     })
 }
 
-export const fetchAllComments = () => {
+export const getAllComments = () => {
     return fetch(url2)
         .then(resp => resp.json());
 }
 
-export const postComment = (comment) => {
+export const createComment = (comment) => {
     return fetch(url2, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
