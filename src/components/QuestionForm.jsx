@@ -7,8 +7,8 @@ export default class QuestionForm extends Component {
     state = {
         title: '',
         details: '',
-        optionA: '',
-        optionB: '',
+        optiona: '',
+        optionb: '',
         username: ''
     }
 
@@ -19,7 +19,7 @@ export default class QuestionForm extends Component {
     submitQForm = e => {
         e.preventDefault()
         this.props.addCallback(this.state);
-        this.setState({ title: '', details: '', optionA: '', optionB: '', username: '' });
+        this.setState({ title: '', details: '', optiona: '', optionb: '', username: '' });
         console.log('Click happened');
     }
 
@@ -44,12 +44,12 @@ export default class QuestionForm extends Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridOption">
                             <Form.Label>Option A</Form.Label>
-                            <Form.Control name='optionA' onChange={this.onChange} value={this.state.optionA} type="text" placeholder="Enter option A" required='required' />
+                            <Form.Control name='optiona' onChange={this.onChange} value={this.state.optiona} type="text" placeholder="Enter option A" required='required' />
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridOption">
                             <Form.Label>Option B</Form.Label>
-                            <Form.Control name='optionB' onChange={this.onChange} value={this.state.optionB} type="text" placeholder="Enter option B" required='required' />
+                            <Form.Control name='optionb' onChange={this.onChange} value={this.state.optionb} type="text" placeholder="Enter option B" required='required' />
                         </Form.Group>
                     </Form.Row>
 

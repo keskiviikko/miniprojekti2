@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import Poll from 'react-polls'
 
 // Declaring poll question and answers
+// const { optionA, optionB } = this.props.question;
+
 const pollQuestion = 'Toimiiko tämä testi'
 const pollAnswers = [
-    { option: 'Totta kai', votes: 100 },  //optionA
-    { option: 'No ei varmaan...', votes: 1 }  //optionB
+    { option: "A", votes: 5 }, // {optionAcounter}
+    { option: "B", votes: 1 } // {optionBcounter}
 ]
 
 

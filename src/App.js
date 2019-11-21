@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Home from './components/Home'
 import QuestionForm from './components/QuestionForm'
-import QuestionList2 from './components/QuestionList2';
+import QuestionList from './components/QuestionList';
 import QuestionDetails from './components/QuestionDetails'
 import CommentForm from './components/CommentForm'
 import Navigation from './components/Navigation'
@@ -18,7 +18,7 @@ function App() {
         <div className="MainContent">
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/questionlist' component={QuestionList2} />
+            <Route path='/questionlist' component={QuestionList} />
             <Route path='/questionform' component={QuestionForm} />
             <Route path='/commentform' component={CommentForm} />
           </Switch>
