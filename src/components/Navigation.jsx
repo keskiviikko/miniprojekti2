@@ -8,7 +8,15 @@ export default class Navigation extends Component {
     render() {
         return (
             <Navbar fixed='top' expand="sm" collapseOnSelect bg='light' variant='light'>
-                <NavbarBrand>Kinkku vs. juusto</NavbarBrand>
+                <NavbarBrand>The POLL application      
+                    {/* <img
+                    src="./images/whistle"
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top"
+                    alt="whistle"
+                /> */}
+                </NavbarBrand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -19,7 +27,7 @@ export default class Navigation extends Component {
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link eventKey={2} as={Link} to='/questionlist'>
-                            Question List
+                                Question List
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
