@@ -15,6 +15,6 @@ export default class QuestionList extends Component {
                 <h2>QuestionList</h2>
                 {questionitems}
             </div>
-        )
+        );
     }
 }
