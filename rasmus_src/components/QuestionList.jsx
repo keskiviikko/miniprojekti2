@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-import QuestionDetails from './QuestionDetails'
+import Question from './Question'
 import { getAllQuestions} from '../service/apiclient'
 
 
 
 export default class QuestionList extends Component {
-    state = { items: [] };
+    constructor(props) {
+        super(props);
+        this.state = { items: [] };
+    }
+    
 
     componentDidMount(){
         this.fetchQuestionList();
@@ -21,7 +25,7 @@ export default class QuestionList extends Component {
         const questionitems = this.state.items
         .map(item => {
             return (
-                <QuestionDetails question={item} key={item.id} />
+                <Question {...this.props} question={item} key={item.id} />
             )
         })
         return (
