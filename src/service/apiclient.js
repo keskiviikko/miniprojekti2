@@ -1,5 +1,5 @@
-const url = 'api/questions';
-const url2 = 'api/comments';
+const url = '/api/questions';
+const url2 = '/api/comments';
 
 export const getAllQuestions = () => {
     return fetch(url)
