@@ -60,7 +60,7 @@ export const updateComment = (comment) => {
     })
 }
 export const deleteSingleComment = (id) => {
-    return fetch(`${url}/${id}`, {
+    return fetch(`${url2}/${id}`, {
         method: 'DELETE'
     })
 }
