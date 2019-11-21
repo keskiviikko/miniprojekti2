@@ -14,7 +14,7 @@ export default class Navigation extends Component {
                     <Nav className="mr-auto">
                         <Nav.Item>
                             <Nav.Link eventKey={1} as={Link} to='/'>
-                            Home
+                                Home
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
@@ -24,12 +24,12 @@ export default class Navigation extends Component {
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link eventKey={3} as={Link} to='/questionform'>
-                            Question Form
+                                Question Form
                             </Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar >
-    )
+        )
     }
 }

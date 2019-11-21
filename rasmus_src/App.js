@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import './App.css';
 import Home from './components/Home'
 import QuestionForm from './components/QuestionForm'
@@ -20,8 +21,6 @@ function App() {
             <Route path='/questionlist' component={QuestionList} />
             <Route path='/questionform' component={QuestionForm} />
             <Route path='/commentform' component={CommentForm} />
-            <Route path='/questions/:id' component={QuestionDetails} />
-            {/* <Route component={NotFound}/> */}
           </Switch>
         </div>
       </Router>
