@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
+import { createQuestion } from '../service/apiclient'
 
 export default class QuestionForm extends Component {
     state = {
         title: '',
-        details: '',
+        topic: '',
         optiona: '',
         optionb: '',
         username: ''
@@ -18,8 +19,8 @@ export default class QuestionForm extends Component {
 
     submitQForm = e => {
         e.preventDefault()
-        this.props.addCallback(this.state);
-        this.setState({ title: '', details: '', optiona: '', optionb: '', username: '' });
+        createQuestion(this.state);
+        this.setState({ title: '', topic: '', optiona: '', optionb: '', username: '' });
         console.log('Click happened');
     }
 
@@ -37,7 +38,7 @@ export default class QuestionForm extends Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridNotes">
                             <Form.Label>Question Details</Form.Label>
-                            <Form.Control name='details' as="textarea" rows="4" onChange={this.onChange} value={this.state.details} placeholder="Your question" required='required' />
+                            <Form.Control name='topic' as="textarea" rows="4" onChange={this.onChange} value={this.state.topic} placeholder="Your question" required='required' />
                         </Form.Group>
                     </Form.Row>
 

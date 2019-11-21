@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
-import { postComment } from '../service/apiclient'
+import { createComment } from '../service/apiclient'
 
 export default class CommentForm extends Component {
     state = {comment: '', username:''}
@@ -14,7 +14,7 @@ export default class CommentForm extends Component {
     }
     submitCForm = e => {
         e.preventDefault();
-        postComment(this.state);
+        createComment(this.state);
         this.setState({comment: '', username: ''});
     }
 
