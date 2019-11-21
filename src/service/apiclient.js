@@ -1,5 +1,5 @@
-const url = 'api/questions';
-const url2 = 'api/comments';
+const url = 'http://localhost:3000/api/questions';
+const url2 = 'http://localhost:3000/api/comments';
 // tuleeko kaikki url:it ja jos tulee, onko sijainnilla väliä? Voi olla samassa
 // const url = 'api/comments';
 // const url = '/';
