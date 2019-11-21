@@ -5,7 +5,7 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import './App.css';
 import Home from './components/Home'
 import QuestionForm from './components/QuestionForm'
-import QuestionList from './components/QuestionList'
+import QuestionList2 from './components/QuestionList2';
 import QuestionDetails from './components/QuestionDetails'
 import CommentForm from './components/CommentForm'
 import Navigation from './components/Navigation'
@@ -18,7 +18,7 @@ function App() {
         <div className="MainContent">
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/questiondetails' component={QuestionDetails} />
+            <Route path='/questionlist' component={QuestionList2} />
             <Route path='/questionform' component={QuestionForm} />
             <Route path='/commentform' component={CommentForm} />
           </Switch>

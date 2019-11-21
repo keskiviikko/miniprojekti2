@@ -1,23 +1,17 @@
-import React, { Component } from "react";
-
-class Item extends Component {
-    state = {
-        listitems: ["Kinkku vai juusto", "Musta vai valkoinen", "Auto vai polkupyörä", "Javascript vai Java", "Superman or Batman"]
-    };
-
+import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Item from './Item';
+export default class QuestionList2 extends Component {
     render() {
         return (
-            <React.Fragment>
-                <ul className="list-group-flush">
-                    {this.state.listitems.map(listitem => (
-                        <li className="list-group-item list-group-item">
-                            {listitem}
-                        </li>
-                    ))}
-                </ul>
-            </React.Fragment>
-        );
+            <Container>
+            <Row>
+                <Col sm={8}>Under construction</Col>
+                <Col sm={4}><Item/></Col>
+            </Row>
+        </Container>
+        )
     }
 }
-
-export default Item;
