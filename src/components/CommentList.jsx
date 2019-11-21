@@ -25,7 +25,7 @@ export default class CommentList extends Component {
             )
         })
         return (
-            <div>
+            <div className="CommentList">
                 <h2>Comment List</h2>
                 <p>{commentitems}</p>
             </div>

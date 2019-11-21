@@ -41,3 +41,32 @@
 .MainContent {
   margin-top: 60pt;
 }
+
+.CommentList {
+  padding: 1em;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.Question {
+  border: 1px solid grey;
+  border-radius: 10pt;
+  margin: 15px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.title:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.PollDiv {
+  padding: 1em;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+}

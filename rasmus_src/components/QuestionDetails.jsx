@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
+import CommentForm from './CommentForm'
+import CommentList from './CommentList'
+import { getSingleQuestion } from '../service/apiclient'
 import Poll from 'react-polls'
 
-// Declaring poll question and answers
-// const { optiona, optionb } = this.props.question;
-
-const pollQuestion = 'Toimiiko tämä testi'
-const pollAnswers = [
-    { option: "A", votes: 5 }, // {optionacounter}
-    { option: "B", votes: 1 } // {optionbcounter}
-]
-
+const pollAnswers = [];
 
 export default class QuestionDetails extends Component {
     state = {
-        pollAnswers: [...pollAnswers]
+        pollAnswers: [...pollAnswers],
+        question: ''
+    }
+    componentDidMount(){
+        const id = this.props.match.params.id
+        getSingleQuestion(id).then(question => {
+            this.setState({question: question[0]})
+        })
     }
     handleVote = voteAnswer => {
         const { pollAnswers } = this.state
@@ -26,14 +28,19 @@ export default class QuestionDetails extends Component {
         })
     }
     render() {
-        const { pollAnswers } = this.state
-        const { title, details, username } = this.props.question;
+        const { title, topic, username } = this.state.question;
+        const pollAnswers = [
+            { option: this.state.question.optiona, votes: this.state.question.optionacounter }, 
+            { option: this.state.question.optionb, votes: this.state.question.optionbcounter }
+        ]
         return (
             <div className="Question">
                 <span className="title">{title}</span>
                 <p className="username">{username}</p>
-                <p className="details">{details}</p>
-                <Poll question={pollQuestion} answers={pollAnswers} onVote={this.handleVote} />
+                <p className="topic">{topic}</p>
+                <Poll question={title} answers={pollAnswers} onVote={this.handleVote} />
+                <CommentForm/>
+                <CommentList/>
             </div>
         )
     }
