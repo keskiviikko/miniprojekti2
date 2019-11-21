@@ -21,6 +21,8 @@ function App() {
             <Route path='/questionlist' component={QuestionList} />
             <Route path='/questionform' component={QuestionForm} />
             <Route path='/commentform' component={CommentForm} />
+            <Route path='/questions/:id' component={QuestionDetails} />
+            {/* <Route component={NotFound}/> */}
           </Switch>
         </div>
       </Router>
