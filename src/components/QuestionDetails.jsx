@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import CommentForm from './CommentForm'
+import CommentList from './CommentList'
 import { getSingleQuestion } from '../service/apiclient'
 import Poll from 'react-polls'
 
@@ -37,6 +39,8 @@ export default class QuestionDetails extends Component {
                 <p className="username">{username}</p>
                 <p className="details">{details}</p>
                 <Poll question={title} answers={pollAnswers} onVote={this.handleVote} />
+                <CommentForm/>
+                <CommentList/>
             </div>
         )
     }
