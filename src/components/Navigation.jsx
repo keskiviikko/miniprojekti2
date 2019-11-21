@@ -18,8 +18,8 @@ export default class Navigation extends Component {
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey={2} as={Link} to='/questiondetails'>
-                                Question Details
+                            <Nav.Link eventKey={2} as={Link} to='/questionlist'>
+                            Question List
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
