@@ -64,3 +64,4 @@ export const deleteSingleComment = (id) => {
         method: 'DELETE'
     })
 }
+
