@@ -31,7 +31,7 @@ export default class CommentForm extends Component {
                         <Form.Control type="text" value={this.state.username}
                             onChange={this.handleUsernameChange} placeholder="Enter username" />
                     </Form.Group>
-                    <Button variant="info" type="submit" onClick={this.submitCForm}>Vote</Button>
+                    <Button variant="info" type="submit" onClick={this.submitCForm}>Comment</Button>
                 </Form>
 
         )
