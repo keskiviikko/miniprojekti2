@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Item from './Item';
+import QuestionList from './QuestionList';
 import Carousel from 'react-bootstrap/Carousel';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
@@ -63,7 +63,7 @@ export default class Home extends Component {
                             A arcu cursus vitae congue mauris. Volutpat odio facilisis mauris sit. Tincidunt vitae semper quis lectus nulla at volutpat diam. Nulla aliquet enim tortor at. Etiam tempor orci eu lobortis elementum. Dignissim enim sit amet venenatis urna. Sed lectus vestibulum mattis ullamcorper velit. Nec feugiat nisl pretium fusce id velit. Id ornare arcu odio ut sem nulla. Odio pellentesque diam volutpat commodo sed egestas egestas. Ut placerat orci nulla pellentesque dignissim enim sit amet venenatis. Lacus sed turpis tincidunt id aliquet risus feugiat in ante. Donec ac odio tempor orci. Sed vulputate odio ut enim blandit volutpat maecenas. Pellentesque elit eget gravida cum sociis natoque penatibus et magnis. In massa tempor nec feugiat nisl pretium fusce id. Aenean et tortor at risus viverra adipiscing at. Accumsan lacus vel facilisis volutpat.
                         </p>
                     </Col>
-                    <Col sm={4}><Item /></Col>
+                    <Col sm={4}><QuestionList /></Col>
                 </Row>
             </Container>
         )
