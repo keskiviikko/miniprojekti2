@@ -22,8 +22,8 @@ export default class QuestionForm extends Component {
         createQuestion(this.state);
         this.setState({ title: '', topic: '', optiona: '', optionb: '', username: '' });
 
-        console.log('Click happened');
-        alert('Question submitted!')
+        // console.log('Click happened');
+        // alert('Question submitted!')
     }
 
     render() {
