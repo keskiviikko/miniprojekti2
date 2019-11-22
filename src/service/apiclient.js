@@ -1,5 +1,6 @@
 const url = '/api/questions';
 const url2 = '/api/comments';
+const url3 = '/api/votes';
 
 export const getAllQuestions = () => {
     return fetch(url)
