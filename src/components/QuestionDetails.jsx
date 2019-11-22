@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import CommentForm from './CommentForm'
 import CommentList from './CommentList'
-import QuestionList from './QuestionList'
-import { getSingleQuestion } from '../service/apiclient'
 import { getSingleQuestion, createVote,  getVoteCount} from '../service/apiclient'
 import Poll from 'react-polls'
 import Container from 'react-bootstrap/Container';
@@ -60,25 +58,27 @@ export default class QuestionDetails extends Component {
 
             // </div>
             <Container>
-
             <Row>
                 <Col sm={8}>
                 <h2>Question Details</h2>
-                    <Poll question={title} answers={pollAnswers} onVote={this.handleVote} />
-                    <CommentForm />
+                <div className='PollDiv'>
+                <Poll question={title} answers={pollAnswers} customStyles={pollStyles2} onVote={this.handleVote} />
+                 </div>
+                 <CommentForm />
                 </Col>
-                <Col sm={4}><QuestionList /></Col>
+                <Col sm={4}><CommentList /></Col>
             </Row>
         </Container>
-            <div className="QuestionDetail">
-                <p className="topic">{topic}</p>
-                <p className="username">{username}</p>
-                <div className='PollDiv'>
-                    <Poll question={title} answers={pollAnswers} customStyles={pollStyles2} onVote={this.handleVote} />
-                </div>
-                <CommentForm />
-                <CommentList />
-            </div>
+
+            // <div className="QuestionDetail">
+            //     <p className="topic">{topic}</p>
+            //     <p className="username">{username}</p>
+            //     <div className='PollDiv'>
+            //         <Poll question={title} answers={pollAnswers} customStyles={pollStyles2} onVote={this.handleVote} />
+            //     </div>
+            //     <CommentForm />
+            //     <CommentList />
+            // </div>
 
         )
     }
