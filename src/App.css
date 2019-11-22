@@ -39,6 +39,24 @@
   margin-bottom: 30px;
 }
 .MainContent {
+  margin-top: 100pt;
+}
+.header {
+  margin-top: 20pt;
+}
+.paragraph {
+  text-align: left;
+  /* text-indent: 50px; */
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #282c34;
+  text-decoration: underline;
+}
+.username {
+  font-style: italic;
+  color: #09d3ac;
   margin-top: 60pt;
 }
 
