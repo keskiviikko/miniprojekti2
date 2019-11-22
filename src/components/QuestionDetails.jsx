@@ -34,7 +34,7 @@ export default class QuestionDetails extends Component {
             if (answer.option === voteAnswer) answer.votes++
             return answer
         })
-        createVote(this.state);
+        createVote(this.state.pollAnswers);
         this.setState({
             pollAnswers: newPollAnswers
         })
