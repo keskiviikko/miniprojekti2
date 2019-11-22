@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CommentForm from './CommentForm'
 import CommentList from './CommentList'
-import { getSingleQuestion } from '../service/apiclient'
+import { getSingleQuestion, createVote,  getVoteCount} from '../service/apiclient'
 import Poll from 'react-polls'
 
 const pollAnswers = [];
@@ -25,6 +25,7 @@ export default class QuestionDetails extends Component {
         getSingleQuestion(id).then(question => {
             this.setState({ question: question[0] })
         })
+        getVoteCount(id);
     }
 
     handleVote = voteAnswer => {
@@ -33,6 +34,7 @@ export default class QuestionDetails extends Component {
             if (answer.option === voteAnswer) answer.votes++
             return answer
         })
+        createVote(this.state);
         this.setState({
             pollAnswers: newPollAnswers
         })
@@ -40,8 +42,8 @@ export default class QuestionDetails extends Component {
     render() {
         const { title, topic, username } = this.state.question;
         const pollAnswers = [
-            { option: this.state.question.optiona, votes: 13 }, // this.state.question.optionacounter
-            { option: this.state.question.optionb, votes: 1 } //this.state.question.optionbcounter
+            { option: this.state.question.optiona, votes: this.state.question.optionacounter }, 
+            { option: this.state.question.optionb, votes: this.state.question.optionbcounter }
         ]
         return (
             <div className="QuestionDetail">

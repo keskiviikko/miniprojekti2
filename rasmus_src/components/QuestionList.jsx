@@ -30,7 +30,7 @@ export default class QuestionList extends Component {
         })
         return (
             <div className="QuestionList AppComponent">
-                <h2>QuestionList</h2>
+                <h2>Question List</h2>
                 {questionitems}
             </div>
         )

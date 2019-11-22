@@ -1,5 +1,6 @@
 const url = '/api/questions';
 const url2 = '/api/comments';
+const url3 = '/api/votes';
 
 export const getAllQuestions = () => {
     return fetch(url)
@@ -65,3 +66,17 @@ export const deleteSingleComment = (id) => {
     })
 }
 
+// Votes osio alkaa tästä
+
+export const createVote = (comment) => {
+    return fetch(url3, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(comment)
+    })
+}
+
+export const getVoteCount = (id) => {
+    return fetch(`${url3}/${id}`)
+        .then(response => response.json());
+}
