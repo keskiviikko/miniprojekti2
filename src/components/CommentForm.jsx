@@ -20,7 +20,6 @@ export default class CommentForm extends Component {
 
     render() {
         return (
-            <div className="CommentForm AppComponent">
                 <Form>
                     <Form.Group as={Col} controlId="formGridComment">
                         <Form.Label>Comment</Form.Label>
@@ -32,10 +31,9 @@ export default class CommentForm extends Component {
                         <Form.Control type="text" value={this.state.username}
                             onChange={this.handleUsernameChange} placeholder="Enter username" />
                     </Form.Group>
-                    <Button variant="info" type="submit" onClick={this.submitCForm}>Vote</Button>
+                    <Button variant="info" type="submit" onClick={this.submitCForm}>Comment</Button>
                 </Form>
 
-            </div>
         )
     }
 }
