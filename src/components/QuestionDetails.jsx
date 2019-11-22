@@ -3,12 +3,22 @@ import CommentForm from './CommentForm'
 import CommentList from './CommentList'
 import QuestionList from './QuestionList'
 import { getSingleQuestion } from '../service/apiclient'
+import { getSingleQuestion, createVote,  getVoteCount} from '../service/apiclient'
 import Poll from 'react-polls'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const pollAnswers = [];
+
+const pollStyles2 = {
+    questionSeparator: false,
+    questionSeparatorWidth: 'question',
+    questionBold: false,
+    questionColor: '#000000',
+    align: 'center',
+    theme: 'cyan',
+}
 
 export default class QuestionDetails extends Component {
     state = {
@@ -20,19 +30,22 @@ export default class QuestionDetails extends Component {
         getSingleQuestion(id).then(question => {
             this.setState({ question: question[0] })
         })
+        getVoteCount(id);
     }
+
     handleVote = voteAnswer => {
         const { pollAnswers } = this.state
         const newPollAnswers = pollAnswers.map(answer => {
             if (answer.option === voteAnswer) answer.votes++
             return answer
         })
+        createVote(this.state);
         this.setState({
             pollAnswers: newPollAnswers
         })
     }
     render() {
-        const { title, details, username } = this.state.question;
+        const { title, topic, username } = this.state.question;
         const pollAnswers = [
             { option: this.state.question.optiona, votes: this.state.question.optionacounter },
             { option: this.state.question.optionb, votes: this.state.question.optionbcounter }
@@ -57,6 +70,16 @@ export default class QuestionDetails extends Component {
                 <Col sm={4}><QuestionList /></Col>
             </Row>
         </Container>
+            <div className="QuestionDetail">
+                <p className="topic">{topic}</p>
+                <p className="username">{username}</p>
+                <div className='PollDiv'>
+                    <Poll question={title} answers={pollAnswers} customStyles={pollStyles2} onVote={this.handleVote} />
+                </div>
+                <CommentForm />
+                <CommentList />
+            </div>
+
         )
     }
 }

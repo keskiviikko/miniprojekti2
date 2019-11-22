@@ -1,8 +1,6 @@
-const url = 'http://localhost:3000/api/questions';
-const url2 = 'http://localhost:3000/api/comments';
-// tuleeko kaikki url:it ja jos tulee, onko sijainnilla väliä? Voi olla samassa
-// const url = 'api/comments';
-// const url = '/';
+const url = '/api/questions';
+const url2 = '/api/comments';
+const url3 = '/api/votes';
 
 export const getAllQuestions = () => {
     return fetch(url)
@@ -22,11 +20,20 @@ export const createQuestion = (question) => {
     })
 }
 
-export const deleteQuestion = (id) => {
+export const updateQuestion = (question) => {
+    return fetch(url, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(question)
+    })
+}
+export const deleteSingleQuestion = (id) => {
     return fetch(`${url}/${id}`, {
         method: 'DELETE'
     })
 }
+
+//Comments-osio alkaa tästä:
 
 export const getAllComments = () => {
     return fetch(url2)
@@ -39,4 +46,37 @@ export const createComment = (comment) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(comment)
     })
+}
+
+export const getSingleComment = (id) => {
+    return fetch(`${url2}/${id}`)
+        .then(response => response.json());
+}
+
+export const updateComment = (comment) => {
+    return fetch(url2, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(comment)
+    })
+}
+export const deleteSingleComment = (id) => {
+    return fetch(`${url2}/${id}`, {
+        method: 'DELETE'
+    })
+}
+
+// Votes osio alkaa tästä
+
+export const createVote = (comment) => {
+    return fetch(url3, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(comment)
+    })
+}
+
+export const getVoteCount = (id) => {
+    return fetch(`${url3}/${id}`)
+        .then(response => response.json());
 }
