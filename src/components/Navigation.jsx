@@ -7,15 +7,15 @@ import NavbarBrand from 'react-bootstrap/NavbarBrand'
 export default class Navigation extends Component {
     render() {
         return (
-            <Navbar fixed='top' expand="sm" collapseOnSelect bg='light' variant='light'>
-                <NavbarBrand>The POLL application      
-                    {/* <img
-                    src="./images/whistle"
-                    width="30"
-                    height="30"
+            <Navbar fixed='top' expand="sm" collapseOnSelect bg='dark' variant='dark'>
+                <NavbarBrand>      
+                    <img
+                    src="/images/whistle.png"
+                    width="70"
+                    height="70"
                     className="d-inline-block align-top"
                     alt="whistle"
-                /> */}
+                />
                 </NavbarBrand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
